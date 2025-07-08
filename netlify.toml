@@ -1,13 +1,18 @@
-[build]
-  command = "npm run build"
-  publish = "dist"
+# netlify.toml
 
+[build]
+  # No build step—just publish our docs folder
+  command = ""
+  publish = "docs"
+
+# Redirect /insights/* to the nested insights files
 [[redirects]]
   from   = "/insights/*"
-  to     = "/docs/insights/:splat"
+  to     = "/insights/:splat"
   status = 200
   force  = true
 
+# Ensure /insights (no slash) redirects properly
 [[redirects]]
   from   = "/insights"
   to     = "/insights/"
