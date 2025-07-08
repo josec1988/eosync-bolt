@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from   = "/insights/*"
+  to     = "/docs/insights/:splat"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/insights"
+  to     = "/insights/"
+  status = 301
